@@ -1,4 +1,4 @@
-package com.mvillafuertem.mapflablup
+package io.github.mvillafuertem.mapflablup
 
 import scala.collection.mutable
 
