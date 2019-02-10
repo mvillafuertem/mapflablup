@@ -1,6 +1,6 @@
 = Mapflablup
 
-Mapflablup is a library to flat and blowup Map Collection
+Mapflablup is a library to flat ➖ and blowup 🎈 Map Collection 
 
 == Example
 
