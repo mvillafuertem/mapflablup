@@ -1,36 +1,41 @@
 package io.github.mvillafuertem.mapflablup
 
+import scala.annotation.tailrec
 import scala.collection.mutable
 
-final class MapBlowUp {
+object MapBlowUp {
+  def apply(map: mutable.Map[String, Any]): MapBlowUp = new MapBlowUp(map)
+}
 
-  def blowUp(map: mutable.Map[String, Any]): mutable.Map[String, Any] = {
-    val node = new mutable.LinkedHashMap[String, Any]
-    map.foreach(tuple => treeFromPath(splitPath(tuple._1), tuple._2, node))
-    node
+final class MapBlowUp(map: mutable.Map[String, Any]) {
+
+  def blowUp: mutable.Map[String, Any] = {
+    val tree = mutable.Map[String, Any]()
+    map.foreach(tuple => treeFromPath(splitPath(tuple._1), tuple._2, tree))
+    tree
   }
 
   private def splitPath(path: String): Array[String] = {
     path.split("[.]")
   }
 
-  private def treeFromPath(path: Array[String], value: Any, map: mutable.Map[String, Any]): mutable.Map[String, Any] = {
+  @tailrec
+  private def treeFromPath(path: Array[String], value: Any, leaf: mutable.Map[String, Any]): mutable.Map[String, Any] = {
     if (path.length equals 1) {
-      map.put(path.head, value)
-      map
+      leaf.put(path.head, value)
+      leaf
     } else {
-      treeFromPath(path.drop(1), value, `with`(path.head, map))
+      treeFromPath(path.drop(1), value, `with`(path.head, leaf))
     }
   }
 
-
-  def `with`(propertyName: String, map: mutable.Map[String, Any]): mutable.Map[String, Any] = {
-    val option = map.get(propertyName)
+  private def `with`(propertyName: String, leaf: mutable.Map[String, Any]): mutable.Map[String, Any] = {
+    val option = leaf.get(propertyName)
 
     option match {
       case Some(value) => value.asInstanceOf[mutable.Map[String, Any]]
       case None => val result = new mutable.LinkedHashMap[String, Any]
-        map.put(propertyName, result)
+        leaf.put(propertyName, result)
         result
     }
 

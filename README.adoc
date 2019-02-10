@@ -1,8 +1,45 @@
 = Mapflablup
 
-Mapflablup is a library to flat ➖ and blowup 🎈 Map Collection 
+****
+
+Mapflablup is a library to flat ➖ and blowup 🎈 Map Collection
+
+****
+
+== Usage
+
+Please see our scala tests!
+
+.Include mapflablup in your project build.sbt
+----
+
+libraryDependencies += "io.github.mvillafuertem" %% "mapflablup" % "0.1"
+
+----
+
+You can use this library with https://github.com/alibaba/fastjson
+
+----
+
+val jsonString = """{...}"""
+
+val json = new JSONObject(jsonString)
+
+val resultFlatted = MapFlatten(json).flatten
+
+val resultBlowUp = MapBlowUp(resultFlatted).blowUp
+
+----
 
 == Example
+
+.Convert String to JSONObject
+----
+
+val jsonString = """{...}"""
+val json = new JSONObject(jsonString)
+
+----
 
 .Given a map as json
 ----
