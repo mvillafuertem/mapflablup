@@ -1,10 +1,14 @@
 package io.github.mvillafuertem.mapflablup
 
 import scala.annotation.tailrec
+import scala.collection.JavaConverters._
 import scala.collection.mutable
+
 
 object MapBlowUp {
   def apply(map: mutable.Map[String, Any]): MapBlowUp = new MapBlowUp(map)
+
+  def apply(map: java.util.Map[String, Any]): MapBlowUp = new MapBlowUp(map.asScala)
 }
 
 final class MapBlowUp(map: mutable.Map[String, Any]) {

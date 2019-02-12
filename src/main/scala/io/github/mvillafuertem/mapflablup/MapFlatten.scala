@@ -5,6 +5,7 @@ import scala.collection.mutable
 
 object MapFlatten {
   def apply(map: mutable.Map[String, Any]): MapFlatten = new MapFlatten(map)
+  def apply(map: java.util.Map[String, Any]): MapFlatten = new MapFlatten(map.asScala)
 }
 
 final class MapFlatten(tree: mutable.Map[String, Any]) {
