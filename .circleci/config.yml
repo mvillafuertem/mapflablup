@@ -11,6 +11,8 @@ jobs:
       TERM: dumb
 
     steps:
+      - checkout
+      
       # compiler, test & run
       - run:
           name: compile, test and run
