@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - checkout
-      
+
       # compiler, test & run
       - run:
           name: compile, test and run
           command: |
                    sbt ";clean ;coverage ;test"
-#                   bash <(curl -s https://codecov.io/bash) -t db92a4a7-4ab4-49ab-9ba9-164a43a25009
+                   bash <(curl -s https://codecov.io/bash) -t 9561c8ed-af0d-4906-8e82-155b5b2493a6
