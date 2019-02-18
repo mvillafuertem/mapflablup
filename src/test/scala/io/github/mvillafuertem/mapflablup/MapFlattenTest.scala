@@ -38,7 +38,7 @@ class MapFlattenTest extends FunSuite {
     tree.put("location", location)
 
     // When
-    val result = MapFlatten(tree).flatten
+    val result: Map[String, Any] = MapFlatten(tree).flatten
 
     // Then
     val expected = mutable.Map[String, Any]()
@@ -64,7 +64,6 @@ class MapFlattenTest extends FunSuite {
     expected.put("location.longitude", -137.117139)
 
     assert(result equals expected)
-
   }
 
 }

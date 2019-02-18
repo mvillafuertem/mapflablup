@@ -18,4 +18,4 @@ jobs:
           name: compile, test and run
           command: |
                    sbt ";clean ;coverage ;test ;coverageReport"
-                   bash <(curl -s https://codecov.io/bash) -t 9561c8ed-af0d-4906-8e82-155b5b2493a6
+                   bash <(curl -s https://codecov.io/bash)

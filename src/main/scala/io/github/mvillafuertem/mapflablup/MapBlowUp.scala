@@ -2,6 +2,7 @@ package io.github.mvillafuertem.mapflablup
 
 import scala.annotation.tailrec
 import scala.collection.JavaConverters._
+import scala.collection.immutable.Map
 import scala.collection.mutable
 
 
@@ -13,10 +14,10 @@ object MapBlowUp {
 
 final class MapBlowUp(map: mutable.Map[String, Any]) {
 
-  def blowUp: mutable.Map[String, Any] = {
+  def blowUp: Map[String, Any] = {
     val tree = mutable.Map[String, Any]()
     map.foreach(tuple => treeFromPath(splitPath(tuple._1), tuple._2, tree))
-    tree
+    tree.toMap
   }
 
   private def splitPath(path: String): Array[String] = {
