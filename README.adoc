@@ -1,5 +1,7 @@
 = Mapflablup
 
+image:https://circleci.com/gh/mvillafuertem/mapflablup/tree/master.svg?style=svg["CircleCI",link="https://circleci.com/gh/mvillafuertem/mapflablup/tree/master"]
+
 ****
 
 Mapflablup is a library to flat ➖ and blowup 🎈 Map Collection
