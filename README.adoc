@@ -1,5 +1,7 @@
 = Mapflablup
 
+image:https://img.shields.io/badge/License-MIT-brightgreen.svg?style=svg["License: MIT",link="https://opensource.org/licenses/MIT"]
+
 image:https://circleci.com/gh/mvillafuertem/mapflablup/tree/master.svg?style=svg["CircleCI",link="https://circleci.com/gh/mvillafuertem/mapflablup/tree/master"]
 
 ****
