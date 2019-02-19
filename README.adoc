@@ -1,7 +1,6 @@
 = Mapflablup
 
-image:https://codecov.io/gh/mvillafuertem/mapflablup/branch/master/graph/badge.svg?style=svg["codecov",link="https://codecov.io/gh/mvillafuertem/mapflablup"] image:https://circleci.com/gh/mvillafuertem/mapflablup/tree/master.svg?style=svg["CircleCI",link="https://circleci.com/gh/mvillafuertem/mapflablup/tree/master"]
-image:https://img.shields.io/badge/License-MIT-brightgreen.svg?style=svg["License: MIT",link="https://opensource.org/licenses/MIT"] 
+image:https://img.shields.io/badge/License-MIT-brightgreen.svg?style=svg["License: MIT",link="https://opensource.org/licenses/MIT"] image:https://codecov.io/gh/mvillafuertem/mapflablup/branch/master/graph/badge.svg?style=svg["codecov",link="https://codecov.io/gh/mvillafuertem/mapflablup"] image:https://circleci.com/gh/mvillafuertem/mapflablup/tree/master.svg?style=svg["CircleCI",link="https://circleci.com/gh/mvillafuertem/mapflablup/tree/master"]
 
 ****
 
