@@ -28,17 +28,16 @@ class MapFlattenTest extends FunSuite {
     personalinfo.put("phone", "+1 (858) 421-2925")
     personalinfo.put("email", "elliottkaufman@spacewax.com")
     personalinfo.put("address", "952 Cropsey Avenue, Tyro, Guam, 1787")
-    tree.put("personalinfo", personalinfo)
-    val company = mutable.Map[String, Any]()
-    company.put("name", "SPACEWAX")
+    val company = Map[String, Any](("name", "SPACEWAX"))
     personalinfo.put("company", company)
-    val location = mutable.Map[String, Any]()
-    location.put("latitude", 78.370719)
-    location.put("longitude", -137.117139)
+    val immutablepersonalinfo = Map(personalinfo.toSeq: _*)
+    tree.put("personalinfo", immutablepersonalinfo)
+    val location = Map[String, Any](("latitude", 78.370719), ("longitude", -137.117139))
     tree.put("location", location)
 
     // When
-    val result: Map[String, Any] = MapFlatten(tree).flatten
+    val immutableTree = Map(tree.toSeq: _*)
+    val result: Map[String, Any] = MapFlatten(immutableTree).flatten
 
     // Then
     val expected = mutable.Map[String, Any]()
@@ -63,7 +62,8 @@ class MapFlattenTest extends FunSuite {
     expected.put("location.latitude", 78.370719)
     expected.put("location.longitude", -137.117139)
 
-    assert(result equals expected)
+    val immutableExpected = Map(expected.toSeq: _*)
+    assert(result equals immutableExpected)
   }
 
 }

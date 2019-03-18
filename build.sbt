@@ -1,7 +1,8 @@
 name := "mapflablup"
 
-version := "0.1"
+version := "0.1.1"
 
 scalaVersion := "2.12.8"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+libraryDependencies += "org.json4s" % "json4s-jackson_2.12" % "3.6.5"

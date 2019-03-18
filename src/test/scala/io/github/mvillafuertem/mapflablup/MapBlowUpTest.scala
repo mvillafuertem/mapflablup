@@ -32,7 +32,8 @@ class MapBlowUpTest extends FunSuite {
     tree.put("location.longitude", -137.117139)
 
     // When
-    val result = MapBlowUp(tree).blowUp
+    val immutableTree = Map(tree.toSeq: _*)
+    val result = MapBlowUp(immutableTree).blowUp
 
     // Then
     val expected = mutable.Map[String, Any]()
